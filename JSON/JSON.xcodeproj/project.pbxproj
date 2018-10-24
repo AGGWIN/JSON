@@ -12,6 +12,7 @@
 		8010C709217F639B00217D40 /* JSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 8010C6FB217F639B00217D40 /* JSON.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8010C713217F64A700217D40 /* IDETemplateMacros.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8010C712217F64A700217D40 /* IDETemplateMacros.plist */; };
 		8010C716217F64FF00217D40 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8010C715217F64FF00217D40 /* JSON.swift */; };
+		80D224552180A69000FDE69A /* APITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D224542180A69000FDE69A /* APITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +34,7 @@
 		8010C708217F639B00217D40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8010C712217F64A700217D40 /* IDETemplateMacros.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = IDETemplateMacros.plist; sourceTree = "<group>"; };
 		8010C715217F64FF00217D40 /* JSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
+		80D224542180A69000FDE69A /* APITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,7 +88,9 @@
 		8010C705217F639B00217D40 /* JSONTests */ = {
 			isa = PBXGroup;
 			children = (
-				8010C706217F639B00217D40 /* JSONTests.swift */,
+				80D224522180A65E00FDE69A /* API */,
+				80D224532180A66700FDE69A /* Internal */,
+				80D224512180A64600FDE69A /* Resources */,
 				8010C708217F639B00217D40 /* Info.plist */,
 			);
 			path = JSONTests;
@@ -98,6 +102,29 @@
 				8010C715217F64FF00217D40 /* JSON.swift */,
 			);
 			path = Source;
+			sourceTree = "<group>";
+		};
+		80D224512180A64600FDE69A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		80D224522180A65E00FDE69A /* API */ = {
+			isa = PBXGroup;
+			children = (
+				80D224542180A69000FDE69A /* APITests.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		80D224532180A66700FDE69A /* Internal */ = {
+			isa = PBXGroup;
+			children = (
+				8010C706217F639B00217D40 /* JSONTests.swift */,
+			);
+			path = Internal;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -218,6 +245,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80D224552180A69000FDE69A /* APITests.swift in Sources */,
 				8010C707217F639B00217D40 /* JSONTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
