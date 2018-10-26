@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3545C35421828E060098D548 /* Hotel.json in Resources */ = {isa = PBXBuildFile; fileRef = 3545C35221828E060098D548 /* Hotel.json */; };
+		3545C35521828E060098D548 /* Search.json in Resources */ = {isa = PBXBuildFile; fileRef = 3545C35321828E060098D548 /* Search.json */; };
+		3545C3572182948A0098D548 /* FileLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3545C3562182948A0098D548 /* FileLoader.swift */; };
 		8010C702217F639B00217D40 /* JSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8010C6F8217F639B00217D40 /* JSON.framework */; };
 		8010C707217F639B00217D40 /* JSONTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8010C706217F639B00217D40 /* JSONTests.swift */; };
 		8010C709217F639B00217D40 /* JSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 8010C6FB217F639B00217D40 /* JSON.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -26,6 +29,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3545C35221828E060098D548 /* Hotel.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Hotel.json; sourceTree = "<group>"; };
+		3545C35321828E060098D548 /* Search.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Search.json; sourceTree = "<group>"; };
+		3545C3562182948A0098D548 /* FileLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileLoader.swift; sourceTree = "<group>"; };
 		8010C6F8217F639B00217D40 /* JSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8010C6FB217F639B00217D40 /* JSON.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
 		8010C6FC217F639B00217D40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -107,6 +113,9 @@
 		80D224512180A64600FDE69A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3545C35221828E060098D548 /* Hotel.json */,
+				3545C35321828E060098D548 /* Search.json */,
+				3545C3562182948A0098D548 /* FileLoader.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -227,6 +236,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3545C35421828E060098D548 /* Hotel.json in Resources */,
+				3545C35521828E060098D548 /* Search.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,6 +257,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				80D224552180A69000FDE69A /* APITests.swift in Sources */,
+				3545C3572182948A0098D548 /* FileLoader.swift in Sources */,
 				8010C707217F639B00217D40 /* JSONTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -395,6 +407,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = JSON/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -421,6 +434,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = JSON/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
