@@ -78,7 +78,7 @@ class FileLoaderTests: XCTestCase {
     
     func testString() {
         let fileString = FileLoader.string(from: "Hotel")
-        XCTAssert(fileString.contains("Caffè Macs"))
+        XCTAssert(fileString.contains("Sheraton"))
     }
     
 }

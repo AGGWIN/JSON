@@ -1,8 +1,10 @@
 {
-    "name": "Caffè Macs",
-    "coordinates": {
+    "name": "Sheraton",
+    "star": 5,
+    "location": {
         "lat": 37.330576,
         "lng": -122.029739
     },
-    "meals": ["breakfast", "lunch", "dinner"]
+    "breakfast": false,
+    "rooms": ["Single", "Double", "Queen", "King"]
 }
