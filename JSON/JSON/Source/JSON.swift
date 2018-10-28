@@ -22,11 +22,22 @@ public enum Type: Int {
 }
 
 public struct JSON {
-    
-    public let data: Data
 
     public init(data: Data) {
-        self.data = data
+        self.object = data
+    }
+    
+    public init(_ object: Any) {
+        switch object {
+        case let object as Data:
+            self.init(data: object)
+        default:
+            self.init(jsonObject: NSNull())
+        }
+    }
+    
+    fileprivate init(jsonObject: Any) {
+        self.object = jsonObject
     }
 
     /// Private object
@@ -39,10 +50,13 @@ public struct JSON {
     /// JSON type, fileprivate setter
     public fileprivate(set) var type: Type = .null
     
+    /// The static null JSON
+    public static var null: JSON { return JSON(NSNull())}
+    
     /// JSON error
     
     /// Object in JSON
-    public var object: Any {
+    fileprivate var object: Any {
         get {
             switch self.type {
             case .string:
@@ -56,6 +70,91 @@ public struct JSON {
             default:
                 return rawNull
             }
+        }
+        set {
+            type = .null
+        }
+    }
+    
+}
+
+// MARK: - Subscript
+
+public enum JSONKey {
+    case index(Int)
+    case key(String)
+}
+
+public protocol JSONSubscriptType {
+    var jsonKey: JSONKey { get }
+}
+
+extension Int: JSONSubscriptType {
+    public var jsonKey: JSONKey {
+        return JSONKey.index(self)
+    }
+}
+
+extension String: JSONSubscriptType {
+    public var jsonKey: JSONKey {
+        return JSONKey.key(self)
+    }
+}
+
+extension JSON {
+    
+    fileprivate subscript(index index: Int) -> JSON {
+        get {
+            return .null
+        }
+        set {
+            
+        }
+    }
+    
+    fileprivate subscript(key key: String) -> JSON {
+        get {
+            return .null
+        }
+        set {
+            
+        }
+    }
+    
+    fileprivate subscript(sub sub: JSONSubscriptType) -> JSON {
+        get {
+            switch sub.jsonKey {
+            case .index(let index): return self[index: index]
+            case .key(let key): return self[key: key]
+            }
+        }
+        set {
+            
+        }
+    }
+    
+    public subscript(path: [JSONSubscriptType]) -> JSON {
+        get {
+            return JSON.null
+        }
+        set {
+            switch path.count {
+            case 0:
+                return
+            case 1:
+                self[sub: path[0]].object = newValue.object
+            default:
+                return
+            }
+        }
+    }
+    
+    public subscript(path: JSONSubscriptType...) -> JSON {
+        get {
+            return self[path]
+        }
+        set {
+            self[path] = newValue
         }
     }
     

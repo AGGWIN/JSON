@@ -14,9 +14,12 @@ class JSONAPITests: XCTestCase {
     
     func testHotel() {
         let json = JSON(data: hotelData)
-        print(json)
-//        let name = json["name"].stringValue
-//        let star = json["star"].intValue
+
+        let name = json["name"].stringValue
+        XCTAssertEqual(name, "Sheraton")
+        let star = json["star"].intValue
+        XCTAssertEqual(star, 5)
+        
 //        let locationJSON = json["location"].json
 //        let lat = locationJSON["lat"].floatValue
 //        let lng = locationJSON["lng"].floatValue

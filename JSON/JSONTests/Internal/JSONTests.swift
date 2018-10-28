@@ -19,7 +19,7 @@ class JSONTests: XCTestCase {
     }
 
     func testInit() {
-        XCTAssertEqual(sut.data, Data())
+        XCTAssertNotNil(sut)
     }
 
 }
