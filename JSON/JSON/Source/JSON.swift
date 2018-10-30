@@ -23,16 +23,21 @@ public enum Type: Int {
 
 public struct JSON {
 
-    public init(data: Data) {
-        self.object = data
+    public init(data: Data) throws {
+        let object: Any = try JSONSerialization.jsonObject(with: data, options: [])
+        self.init(jsonObject: object)
     }
     
     public init(_ object: Any) {
         switch object {
         case let object as Data:
-            self.init(data: object)
+            do {
+                try self.init(data: object)
+            } catch {
+                self.init(jsonObject: NSNull())
+            }
         default:
-            self.init(jsonObject: NSNull())
+            self.init(jsonObject: object)
         }
     }
     
