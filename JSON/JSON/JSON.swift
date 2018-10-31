@@ -77,7 +77,36 @@ public struct JSON {
             }
         }
         set {
-            type = .null
+            switch unbox(newValue) {
+            case let string as String:
+                type = .string
+                rawString = string
+            case let int as Int:
+                type = .int
+                rawInt = int
+            case let double as Double:
+                type = .double
+                rawDouble = double
+            default:
+                type = .null
+            }
+        }
+    }
+    
+    private func unbox(_ object: Any) -> Any {
+        switch object {
+        case let json as JSON:
+            return json.unbox(json.object)
+        case let array as [Any]:
+            return array.map(unbox)
+        case let dictionary as [String: Any]:
+            var unboxedDic = dictionary
+            for (k, v) in dictionary {
+                unboxedDic[k] = unbox(v)
+            }
+            return unboxedDic
+        default:
+            return object
         }
     }
     

@@ -13,7 +13,7 @@ class JSONAPITests: XCTestCase {
     let hotelData = FileLoader.data(from: "Hotel")
     
     func testHotel() {
-        let json = JSON(data: hotelData)
+        let json = try! JSON(data: hotelData)
 
         let name = json["name"].stringValue
         XCTAssertEqual(name, "Sheraton")

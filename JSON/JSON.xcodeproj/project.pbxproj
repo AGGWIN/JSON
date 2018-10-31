@@ -11,7 +11,6 @@
 		3545C35521828E060098D548 /* Search.json in Resources */ = {isa = PBXBuildFile; fileRef = 3545C35321828E060098D548 /* Search.json */; };
 		3545C3572182948A0098D548 /* FileLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3545C3562182948A0098D548 /* FileLoader.swift */; };
 		8010C702217F639B00217D40 /* JSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8010C6F8217F639B00217D40 /* JSON.framework */; };
-		8010C707217F639B00217D40 /* JSONTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8010C706217F639B00217D40 /* JSONTests.swift */; };
 		8010C709217F639B00217D40 /* JSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 8010C6FB217F639B00217D40 /* JSON.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8010C713217F64A700217D40 /* IDETemplateMacros.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8010C712217F64A700217D40 /* IDETemplateMacros.plist */; };
 		8010C716217F64FF00217D40 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8010C715217F64FF00217D40 /* JSON.swift */; };
@@ -36,7 +35,6 @@
 		8010C6FB217F639B00217D40 /* JSON.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
 		8010C6FC217F639B00217D40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8010C701217F639B00217D40 /* JSONTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JSONTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8010C706217F639B00217D40 /* JSONTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONTests.swift; sourceTree = "<group>"; };
 		8010C708217F639B00217D40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8010C712217F64A700217D40 /* IDETemplateMacros.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = IDETemplateMacros.plist; sourceTree = "<group>"; };
 		8010C715217F64FF00217D40 /* JSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
@@ -83,10 +81,10 @@
 		8010C6FA217F639B00217D40 /* JSON */ = {
 			isa = PBXGroup;
 			children = (
-				8010C714217F64EE00217D40 /* Source */,
 				8010C6FB217F639B00217D40 /* JSON.h */,
-				8010C712217F64A700217D40 /* IDETemplateMacros.plist */,
+				8010C715217F64FF00217D40 /* JSON.swift */,
 				8010C6FC217F639B00217D40 /* Info.plist */,
+				8010C712217F64A700217D40 /* IDETemplateMacros.plist */,
 			);
 			path = JSON;
 			sourceTree = "<group>";
@@ -95,19 +93,10 @@
 			isa = PBXGroup;
 			children = (
 				80D224522180A65E00FDE69A /* API */,
-				80D224532180A66700FDE69A /* Internal */,
 				80D224512180A64600FDE69A /* Resources */,
 				8010C708217F639B00217D40 /* Info.plist */,
 			);
 			path = JSONTests;
-			sourceTree = "<group>";
-		};
-		8010C714217F64EE00217D40 /* Source */ = {
-			isa = PBXGroup;
-			children = (
-				8010C715217F64FF00217D40 /* JSON.swift */,
-			);
-			path = Source;
 			sourceTree = "<group>";
 		};
 		80D224512180A64600FDE69A /* Resources */ = {
@@ -126,14 +115,6 @@
 				80D224542180A69000FDE69A /* APITests.swift */,
 			);
 			path = API;
-			sourceTree = "<group>";
-		};
-		80D224532180A66700FDE69A /* Internal */ = {
-			isa = PBXGroup;
-			children = (
-				8010C706217F639B00217D40 /* JSONTests.swift */,
-			);
-			path = Internal;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,7 +239,6 @@
 			files = (
 				80D224552180A69000FDE69A /* APITests.swift in Sources */,
 				3545C3572182948A0098D548 /* FileLoader.swift in Sources */,
-				8010C707217F639B00217D40 /* JSONTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
