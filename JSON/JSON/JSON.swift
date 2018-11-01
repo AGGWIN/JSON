@@ -18,6 +18,7 @@ public enum Type: Int {
     case boolArray
     case any
     case anyArray
+    case dictionary
     case null
 }
 
@@ -50,6 +51,8 @@ public struct JSON {
     fileprivate var rawInt: Int = 0
     fileprivate var rawDouble: Double = 0.0
     fileprivate var rawBool: Bool = false
+    fileprivate var rawArray: [Any] = []
+    fileprivate var rawDictionary: [String: Any] = [:]
     fileprivate var rawNull: NSNull = NSNull()
     
     /// JSON type, fileprivate setter
@@ -72,6 +75,8 @@ public struct JSON {
                 return rawDouble
             case .bool:
                 return rawBool
+            case .dictionary:
+                return rawDictionary
             default:
                 return rawNull
             }
@@ -87,6 +92,9 @@ public struct JSON {
             case let double as Double:
                 type = .double
                 rawDouble = double
+            case let dictionary as [String: Any]:
+                type = .dictionary
+                rawDictionary = dictionary
             default:
                 type = .null
             }
@@ -148,7 +156,13 @@ extension JSON {
     
     fileprivate subscript(key key: String) -> JSON {
         get {
-            return .null
+            var result = JSON.null
+            if self.type == .dictionary {
+                if let value = rawDictionary[key] {
+                    result = JSON(value)
+                }
+            }
+            return result
         }
         set {
             
@@ -169,7 +183,7 @@ extension JSON {
     
     public subscript(path: [JSONSubscriptType]) -> JSON {
         get {
-            return JSON.null
+            return path.reduce(self) { $0[sub: $1] }
         }
         set {
             switch path.count {
