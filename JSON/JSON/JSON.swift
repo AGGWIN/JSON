@@ -269,3 +269,21 @@ extension JSON {
     }
     
 }
+
+extension JSON {
+    
+    // Optional
+    public var bool: Bool? {
+        get {
+            return nil
+        }
+    }
+    
+    // Non-optional
+    public var boolValue: Bool {
+        get {
+            return false
+        }
+    }
+    
+}
