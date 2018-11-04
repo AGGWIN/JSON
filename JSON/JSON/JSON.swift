@@ -95,6 +95,9 @@ public struct JSON {
             case let dictionary as [String: Any]:
                 type = .dictionary
                 rawDictionary = dictionary
+            case let bool as Bool:
+                type = .bool
+                rawBool = bool
             default:
                 type = .null
             }
@@ -275,14 +278,24 @@ extension JSON {
     // Optional
     public var bool: Bool? {
         get {
-            return nil
+            switch self.type {
+            case .bool:
+                return object as? Bool
+            default:
+                return nil
+            }
         }
     }
     
     // Non-optional
     public var boolValue: Bool {
         get {
-            return false
+            switch self.type {
+            case .bool:
+                return object as? Bool ?? false
+            default:
+                return false
+            }
         }
     }
     

@@ -28,8 +28,12 @@ class JSONAPITests: XCTestCase {
 //        let locationJSON = json["location"].json
 //        let lat = locationJSON["lat"].floatValue
 //        let lng = locationJSON["lng"].floatValue
+        
         let breakfast = json["breakfast"].bool
-        XCTAssertEqual(breakfast, false)
+        XCTAssertNotNil(breakfast)
+        let breakfastValue = json["breakfast"].boolValue
+        XCTAssertEqual(breakfastValue, false)
+        
 //        let rooms = json["rooms"].stringArray
     }
     
