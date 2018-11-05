@@ -1,10 +1,10 @@
 {
     "name": "Sheraton",
     "star": 5,
+    "breakfast": true,
+    "rooms": ["Single", "Double", "Queen", "King"],
     "location": {
         "lat": 37.330576,
         "lng": -122.029739
-    },
-    "breakfast": false,
-    "rooms": ["Single", "Double", "Queen", "King"]
+    }
 }
