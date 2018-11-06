@@ -300,3 +300,19 @@ extension JSON {
     }
     
 }
+
+extension JSON {
+    
+    // String array
+    public var stringArray: [String] {
+        get {
+            switch self.type {
+            case .stringArray:
+                return []
+            default:
+                return []
+            }
+        }
+    }
+    
+}
