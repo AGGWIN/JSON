@@ -35,7 +35,7 @@ class JSONAPITests: XCTestCase {
         XCTAssertEqual(breakfastValue, true)
         
         let rooms = json["rooms"].stringArray
-        XCTAssertEqual(rooms.count, 0)
+        XCTAssertEqual(rooms.count, 4)
     }
     
 }
